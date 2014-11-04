@@ -11,10 +11,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
-export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+export PATH=$PATH:/usr/lib/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 export PATH="$PATH:/opt/perforce/p4/bin"
-export PATH="$HOME/.cabal/bin:$PATH"
-export PATH="$PATH:$HOME/bin"
 typeset -U PATH
 
 alias c=colorize_via_pygmentize
@@ -33,7 +31,7 @@ colorize_via_pygmentize() {
     if [ $# -eq 0 ]; then
         pygmentize -g $@
     fi
-    
+
     for FNAME in $@
     do
         filename=$(basename "$FNAME")
