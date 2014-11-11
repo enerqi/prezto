@@ -25,8 +25,8 @@ fi
 # Customize to your needs...
 
 # Local machine specific login shell setup that we don't want to commit to source control
-if [[ -f ~/.login.local ]]; then
-    source ~/.login.local
+if [[ -f ~/.zlogin.local ]]; then
+    source ~/.zlogin.local
 fi
 
 # All linux machines regardless of host - ensure fixed annoying <Super+P> key combo setting projector mode

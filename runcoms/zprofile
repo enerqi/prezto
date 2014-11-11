@@ -48,6 +48,10 @@ path=(
   $HOME/.cabal/bin
   $path
 )
+# Local machine specific shell setup that we don't want to commit to source control
+if [[ -f ~/.zprofile.local ]]; then
+    source ~/.zprofile.local
+fi
 
 #
 # Less

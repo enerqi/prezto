@@ -68,6 +68,6 @@ function ghc-pkg-reset() {
 }
 
 # Local machine specific shell setup that we don't want to commit to source control
-if [[ -f ~/.rc.local ]]; then
-    source ~/.rc.local
+if [[ -f ~/.zshrc.local ]]; then
+    source ~/.zshrc.local
 fi
