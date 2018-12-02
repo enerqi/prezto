@@ -14,15 +14,15 @@
   fi
 } &!
 
-# Print a random, hopefully interesting, adage.
-if (( $+commands[fortune] )); then
-  if [[ -t 0 || -t 1 ]]; then
+# Execute code only if STDERR is bound to a TTY.
+[[ -o INTERACTIVE && -t 2 ]] && {
+
+  # Print a random, hopefully interesting, adage.
+  if (( $+commands[fortune] )); then
     fortune -s
     print
   fi
-fi
-
-# Customize to your needs...
+} >&2
 
 # Local machine specific login shell setup that we don't want to commit to source control
 if [[ -f ~/.zlogin.local ]]; then
@@ -32,3 +32,4 @@ fi
 # All linux machines regardless of host - ensure fixed annoying <Super+P> key combo setting projector mode
 # which interferes with the i3 WM shortcuts
 [[ `uname` = Linux ]] && which dconf > /dev/null && dconf write /org/gnome/settings-daemon/plugins/media-keys/active false
+
